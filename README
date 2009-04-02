@@ -12,7 +12,7 @@ says this is "Easy and flexible". So I've created the plugin.
   #
   class ApplicationController < ActionController::Base
 
-    add_breadcrumb 'Home', '/'
+    add_breadcrumb 'Home', :root_path
 
   end
 
