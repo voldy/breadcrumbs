@@ -6,7 +6,7 @@ module SimplifiedBreadcrumbs
 
     def add_breadcrumb(name, url = '')
       @breadcrumbs ||= []
-      url = eval(url) if url =~ /_path|_url/
+      url = send(url) if url.is_a?(Symbol)
       @breadcrumbs << [name, url]
     end
 
@@ -20,8 +20,8 @@ module SimplifiedBreadcrumbs
 
   module Helper
 
-    def breadcrumbs(separator = "&rsaquo;")
-      @breadcrumbs.map { |name, path| link_to_unless_current(name, path) }.join(" #{separator} ")
+    def breadcrumb(separator = "&rsaquo;")
+      @breadcrumbs.map { |txt, path| link_to_unless((path.blank? || current_page?(path)), h(txt), path) }.join(" #{separator} ")
     end
 
   end
