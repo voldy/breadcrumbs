@@ -20,21 +20,25 @@ module SimplifiedBreadcrumbs
 
   module Helper
 
-    # Returns the HTML for the 
+    ##
+    # Returns the HTML for the breadcrumbs.
     #
-    def breadcrumb( *args )
+    def breadcrumb(*args)
+
       options = args.extract_options!
       options[:separator] ||= "&rsaquo;"
+
       html = ""
       return html if @breadcrumbs.nil?
       if options[:wrap_with_tag]
-        html = @breadcrumbs.map { |name, url| "<#{options[:wrap_with_tag]} class=\"#{options[:class]}\">#{link_to_unless_current( name, url )}</#{options[:wrap_with_tag]}>" }.join( "" )
-      elsif options[:seperator]
+        html = @breadcrumbs.map { |name, url| "<#{options[:wrap_with_tag]} class=\"#{options[:class]}\">#{link_to_unless_current( name, url )}</#{options[:wrap_with_tag]}>" }.join("")
+      elsif options[:separator]
         html = @breadcrumbs.map { |name, url| link_to_unless_current( name, url ) }.join(" #{options[:separator]} ")
       end
       return html
+
     end
-    
+
   end
 
 end

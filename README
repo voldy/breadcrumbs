@@ -1,19 +1,19 @@
 == Simplified Breadcrumbs
 
-A nice way to add breadcrumbs to your application. Antonio Cangiano posted a 
-link in the Ruby on Rails weblog to a post which talked about adding breadcrumbs 
-to your Rails application. I've been doing this with helpers, but as the post
-says this is "Easy and flexible". So I've created the plugin.
+A nice way to add breadcrumbs to your application. Antonio Cangiano 
+posted a link in the Ruby on Rails weblog to a post which talked about 
+adding breadcrumbs to your Rails application. I've been doing this with 
+helpers, but as the post says this is "Easy and flexible". So I've 
+created the plugin.
 
 == Changes
 
-Changed breadcrumb method to accept 3 options: :wrap_with_tag, :class and :seperator.
+Changed breadcrumb method to accept 3 options: <tt>:wrap_with_tag</tt>, 
+<tt>:class</tt> and <tt>:separator</tt>.
 
 * +:wrap_with_tag+ - An HTML tag to wrap each breadcrumb entry with (ie. li, p, etc.).
 * +:class+ - An HTML class to give to the tag specified in the +:wrap_with_tag+ option.
-* +:seperator+ - Acts the same as the old breadcrumb method worked.
-
-  <%= breadcrumb ::wrap_with_tag => 'li' %>
+* +:separator+ - Acts the same as the old breadcrumb method worked.
 
 == Example
 
@@ -46,7 +46,8 @@ Changed breadcrumb method to accept 3 options: :wrap_with_tag, :class and :seper
   # app/views/layouts/application.html.erb
   #
   <%= breadcrumb %>
-  <%= breadcrumb("=>") %> <!-- You can define the separator you want -->
+  <%= breadcrumb(:separator => '=>') %>
+  <%= breadcrumb(:wrap_with_tag => 'li') %>
 
 == Acknowledgments
 
