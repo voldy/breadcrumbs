@@ -1,4 +1,4 @@
-== Simplified Breadcrumbs
+= Simplified Breadcrumbs
 
 A nice way to add breadcrumbs to your application. Antonio Cangiano 
 posted a link in the Ruby on Rails weblog to a post which talked about 
