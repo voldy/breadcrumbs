@@ -11,9 +11,9 @@ created the plugin.
 Changed breadcrumb method to accept 3 options: <tt>:wrap_with_tag</tt>, 
 <tt>:class</tt> and <tt>:separator</tt>.
 
-* +:wrap_with_tag+ - An HTML tag to wrap each breadcrumb entry with (ie. li, p, etc.).
-* +:class+ - An HTML class to give to the tag specified in the +:wrap_with_tag+ option.
-* +:separator+ - Acts the same as the old breadcrumb method worked.
+* <tt>:wrap_with_tag</tt> - An HTML tag to wrap each breadcrumb entry with (ie. li, p, etc.).
+* <tt>:class</tt> - An HTML class to give to the tag specified in the +:wrap_with_tag+ option.
+* <tt>:separator</tt> - Acts the same as the old breadcrumb method worked.
 
 == Example
 
