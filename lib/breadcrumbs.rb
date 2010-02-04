@@ -5,9 +5,9 @@ module Breadcrumbs
     protected
 
     # Append a breadcrumb to the end of the trail
-    def add_breadcrumb(name, url =  nil)
+    def add_breadcrumb(name, url =  nil, url_options = nil)
       @breadcrumbs ||= []
-      url = send(url) if url.is_a?(Symbol)
+      url = send(url, url_options) if url.is_a?(Symbol)
       name = send(name).to_s.titleize if name.is_a?(Symbol)
       @breadcrumbs << [name, url]
     end
@@ -18,9 +18,9 @@ module Breadcrumbs
 
     # Append a breadcrumb to the end of the trail by deferring evaluation 
     # until the filter processing.
-    def add_breadcrumb(name, url = nil, options = {})
+    def add_breadcrumb(name, url = nil, options = {}, url_options = {})
       before_filter(options) do |controller|
-        controller.send(:add_breadcrumb, name, url)
+        controller.send(:add_breadcrumb, name, url, url_options)
       end
     end
 
